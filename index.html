@@ -1,0 +1,2832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta
+        name="theme-color"
+        content="#08040a"
+    >
+
+    <meta
+        name="description"
+        content="A special birthday surprise for Sagarika ❤️"
+    >
+
+    <title>Happy Birthday Sagarika ❤️</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&family=Great+Vibes&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         COMPLETE CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background: #08040a;
+        }
+
+        body {
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 15%,
+                    rgba(255, 110, 150, 0.15),
+                    transparent 35%
+                ),
+                #08040a;
+
+            color: #fff7fa;
+
+            font-family: "DM Sans", sans-serif;
+
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        button {
+            font-family: inherit;
+
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+
+        /* =====================================================
+           OPENING SCREEN
+        ====================================================== */
+
+        #opening {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 5000;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 40%,
+                    rgba(255, 112, 150, 0.16),
+                    transparent 42%
+                ),
+                #08040a;
+
+            transition:
+                opacity 1s ease,
+                visibility 1s ease;
+        }
+
+        #opening.hide {
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+        }
+
+        .opening-content {
+            width: min(100%, 500px);
+
+            animation:
+                openingFloat 4s ease-in-out infinite;
+        }
+
+        .tiny {
+            margin-bottom: 16px;
+
+            color: #e9bd83;
+
+            font-size: 11px;
+
+            letter-spacing: 0.3em;
+
+            text-transform: uppercase;
+        }
+
+        .opening-content h1 {
+            margin-bottom: 18px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(
+                    58px,
+                    17vw,
+                    105px
+                );
+
+            font-weight: 500;
+
+            line-height: 0.88;
+        }
+
+        .opening-content h1 span {
+            color: #ff9db7;
+        }
+
+        .opening-text {
+            margin-bottom: 35px;
+
+            color: #cdbbc2;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .open-btn {
+            min-width: 210px;
+
+            padding:
+                15px
+                27px;
+
+            border:
+                1px solid
+                rgba(255, 180, 200, 0.35);
+
+            border-radius: 999px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ff7699,
+                    #ffb1c4
+                );
+
+            color: #290d17;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 15px 45px
+                rgba(255, 105, 145, 0.22);
+
+            transition:
+                transform .25s ease;
+        }
+
+        .open-btn:active {
+            transform: scale(.94);
+        }
+
+        .opening-heart {
+            margin-top: 35px;
+
+            color:
+                rgba(
+                    255,
+                    160,
+                    185,
+                    .45
+                );
+
+            font-size: 22px;
+
+            letter-spacing: 15px;
+        }
+
+        @keyframes openingFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0);
+            }
+
+            50% {
+                transform:
+                    translateY(-8px);
+            }
+
+        }
+
+
+        /* =====================================================
+           MAIN PAGE
+        ====================================================== */
+
+        #birthdayPage {
+            opacity: 0;
+
+            transition:
+                opacity 1.5s ease;
+        }
+
+        #birthdayPage.show {
+            opacity: 1;
+        }
+
+
+        /* =====================================================
+           MUSIC CONTROL
+        ====================================================== */
+
+        .music-control {
+            position: fixed;
+
+            top: 15px;
+            right: 15px;
+
+            z-index: 4500;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 6px;
+
+            padding:
+                9px
+                13px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.15);
+
+            border-radius: 999px;
+
+            background:
+                rgba(
+                    15,
+                    7,
+                    14,
+                    .72
+                );
+
+            color: #ffdce5;
+
+            font-size: 12px;
+
+            cursor: pointer;
+
+            backdrop-filter:
+                blur(14px);
+
+            -webkit-backdrop-filter:
+                blur(14px);
+
+            box-shadow:
+                0 8px 30px
+                rgba(0,0,0,.3);
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition:
+                opacity .6s ease,
+                transform .25s ease;
+        }
+
+        .music-control.visible {
+            opacity: 1;
+
+            pointer-events: auto;
+        }
+
+        .music-control:active {
+            transform:
+                scale(.92);
+        }
+
+        .music-control.playing {
+            color: #ffb3c4;
+
+            box-shadow:
+                0 0 25px
+                rgba(
+                    255,
+                    100,
+                    150,
+                    .22
+                );
+        }
+
+
+        /* =====================================================
+           HERO
+        ====================================================== */
+
+        .hero {
+            position: relative;
+
+            min-height: 100svh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding:
+                85px
+                16px
+                55px;
+
+            overflow: hidden;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at 50% 35%,
+                    rgba(255, 130, 160, .12),
+                    transparent 42%
+                );
+        }
+
+        .hero-content {
+            position: relative;
+
+            z-index: 5;
+
+            width:
+                min(
+                    100%,
+                    900px
+                );
+        }
+
+        .hero-small {
+            margin-bottom: 12px;
+
+            color: #e8c38c;
+
+            font-size: 11px;
+
+            letter-spacing: .3em;
+
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin-bottom: 8px;
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size:
+                clamp(
+                    68px,
+                    19vw,
+                    150px
+                );
+
+            font-weight: 400;
+
+            line-height: .85;
+
+            color: #ffd8e1;
+
+            text-shadow:
+                0 0 30px
+                rgba(
+                    255,
+                    120,
+                    160,
+                    .25
+                );
+        }
+
+        .hero h2 {
+            margin-bottom: 20px;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(
+                    30px,
+                    7vw,
+                    58px
+                );
+
+            font-weight: 500;
+
+            color: #fff5f7;
+        }
+
+        .hero-description {
+            max-width: 580px;
+
+            margin:
+                0
+                auto
+                35px;
+
+            color: #cdbdc4;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           BIRTHDAY BANNER
+        ====================================================== */
+
+        .banner-wrapper {
+            position: relative;
+
+            width:
+                min(
+                    100%,
+                    650px
+                );
+
+            margin:
+                0
+                auto;
+
+            padding: 7px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 220, 180, .35),
+                    rgba(255, 120, 160, .16),
+                    rgba(255,255,255,.08)
+                );
+
+            box-shadow:
+                0 30px 100px
+                rgba(0,0,0,.55);
+
+            animation:
+                bannerFloat
+                5s ease-in-out infinite;
+        }
+
+        .banner-wrapper::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -2px;
+
+            z-index: -1;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    120deg,
+                    transparent,
+                    rgba(255,195,215,.5),
+                    transparent
+                );
+
+            opacity: .5;
+
+            animation:
+                bannerGlow
+                4s linear infinite;
+        }
+
+        .birthday-banner {
+            width: 100%;
+
+            border-radius: 22px;
+
+            box-shadow:
+                inset
+                0 0 0 1px
+                rgba(255,255,255,.12);
+        }
+
+        @keyframes bannerFloat {
+
+            0%,
+            100% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-7px)
+                    rotate(.2deg);
+            }
+
+        }
+
+        @keyframes bannerGlow {
+
+            0% {
+                transform:
+                    translateX(-100%);
+            }
+
+            100% {
+                transform:
+                    translateX(100%);
+            }
+
+        }
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ====================================================== */
+
+        .section {
+            position: relative;
+
+            min-height: 100svh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding:
+                80px
+                18px;
+
+            overflow: hidden;
+        }
+
+        .section-inner {
+            position: relative;
+
+            z-index: 3;
+
+            width:
+                min(
+                    100%,
+                    800px
+                );
+        }
+
+        .section-label {
+            margin-bottom: 12px;
+
+            color: #e6c38a;
+
+            font-size: 11px;
+
+            letter-spacing: .25em;
+
+            text-transform: uppercase;
+
+            text-align: center;
+        }
+
+        .section-title {
+            margin-bottom: 20px;
+
+            color: #ffe3e9;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(
+                    45px,
+                    11vw,
+                    85px
+                );
+
+            font-weight: 500;
+
+            line-height: .95;
+
+            text-align: center;
+        }
+
+        .section-text {
+            max-width: 620px;
+
+            margin:
+                0
+                auto;
+
+            color: #cdbdc4;
+
+            font-size: 16px;
+
+            line-height: 1.85;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           MESSAGE SECTION
+        ====================================================== */
+
+        .message-section {
+            background:
+                radial-gradient(
+                    circle at 50% 40%,
+                    rgba(255,127,159,.09),
+                    transparent 50%
+                );
+        }
+
+        .message-card {
+            padding:
+                32px
+                22px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.09);
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,.06),
+                    rgba(255,255,255,.018)
+                );
+
+            box-shadow:
+                0 25px 80px
+                rgba(0,0,0,.35);
+
+            backdrop-filter:
+                blur(15px);
+
+            -webkit-backdrop-filter:
+                blur(15px);
+        }
+
+        .message-card p {
+            margin-bottom: 20px;
+
+            color: #eadde1;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 21px;
+
+            line-height: 1.65;
+
+            text-align: center;
+        }
+
+        .message-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .signature {
+            margin-top: 25px;
+
+            color: #ffb3c4;
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size: 36px;
+
+            text-align: right;
+        }
+
+
+        /* =====================================================
+           WISHES
+        ====================================================== */
+
+        .wishes-section {
+            background:
+                linear-gradient(
+                    180deg,
+                    #09060d,
+                    #100812
+                );
+        }
+
+        .wish-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+        .wish {
+            min-height: 145px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 18px;
+
+            border:
+                1px solid
+                rgba(255,255,255,.08);
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,.035);
+
+            text-align: center;
+
+            transition:
+                transform .3s ease,
+                background .3s ease;
+        }
+
+        .wish:active {
+            transform:
+                scale(.96);
+        }
+
+        .wish-icon {
+            margin-bottom: 10px;
+
+            font-size: 28px;
+        }
+
+        .wish h3 {
+            margin-bottom: 7px;
+
+            color: #ffe3e9;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 23px;
+        }
+
+        .wish p {
+            color: #aa9ca3;
+
+            font-size: 11px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =====================================================
+           SECRET
+        ====================================================== */
+
+        .surprise-section {
+            min-height: 80svh;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(230,195,138,.07),
+                    transparent 50%
+                );
+        }
+
+        .surprise-button {
+            display: block;
+
+            margin:
+                35px
+                auto
+                0;
+
+            padding:
+                16px
+                28px;
+
+            border:
+                1px solid
+                rgba(255,179,196,.25);
+
+            border-radius: 999px;
+
+            background:
+                rgba(255,255,255,.055);
+
+            color: #ffdce4;
+
+            font-size: 14px;
+
+            cursor: pointer;
+
+            backdrop-filter:
+                blur(10px);
+
+            transition:
+                .3s ease;
+        }
+
+        .surprise-button:active {
+            transform:
+                scale(.94);
+        }
+
+        .hidden-message {
+            max-height: 0;
+
+            overflow: hidden;
+
+            opacity: 0;
+
+            transition:
+                max-height 1s ease,
+                opacity 1s ease,
+                margin 1s ease;
+        }
+
+        .hidden-message.open {
+            max-height: 500px;
+
+            margin-top: 30px;
+
+            opacity: 1;
+        }
+
+        .hidden-message p {
+            color: #ffdce5;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size: 27px;
+
+            line-height: 1.35;
+
+            text-align: center;
+        }
+
+
+        /* =====================================================
+           FINAL
+        ====================================================== */
+
+        .final {
+            min-height: 100svh;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(255,100,145,.14),
+                    transparent 48%
+                ),
+                #08040a;
+
+            text-align: center;
+        }
+
+        .final-small {
+            margin-bottom: 15px;
+
+            color: #e6c38a;
+
+            font-size: 11px;
+
+            letter-spacing: .3em;
+
+            text-transform: uppercase;
+        }
+
+        .final h2 {
+            margin-bottom: 18px;
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size:
+                clamp(
+                    65px,
+                    17vw,
+                    145px
+                );
+
+            font-weight: 400;
+
+            color: #ffd4df;
+
+            line-height: .9;
+        }
+
+        .final-name {
+            margin-bottom: 25px;
+
+            color: #fff;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(
+                    34px,
+                    8vw,
+                    65px
+                );
+        }
+
+        .final-text {
+            max-width: 600px;
+
+            margin:
+                auto;
+
+            color: #cdbdc4;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           FIREWORK CANVAS
+        ====================================================== */
+
+        #fireworks {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 3000;
+
+            width: 100%;
+            height: 100%;
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           PETAL RAIN
+        ====================================================== */
+
+        #petalRain {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 3500;
+
+            overflow: hidden;
+
+            pointer-events: none;
+        }
+
+        .petal {
+            position: absolute;
+
+            top: -60px;
+
+            width: 15px;
+
+            height: 23px;
+
+            border-radius:
+                70%
+                20%
+                70%
+                20%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffb3c4,
+                    #ff668f
+                );
+
+            opacity: .85;
+
+            filter:
+                drop-shadow(
+                    0 2px 5px
+                    rgba(0,0,0,.2)
+                );
+
+            animation:
+                petalFall
+                linear forwards;
+        }
+
+        .petal:nth-child(3n) {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffd3dd,
+                    #ff91ad
+                );
+        }
+
+        .petal:nth-child(4n) {
+            background:
+                linear-gradient(
+                    135deg,
+                    #fff0c9,
+                    #e7b876
+                );
+        }
+
+        @keyframes petalFall {
+
+            0% {
+                transform:
+                    translate3d(
+                        0,
+                        -60px,
+                        0
+                    )
+                    rotate(0deg);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: .9;
+            }
+
+            50% {
+                transform:
+                    translate3d(
+                        var(--sway),
+                        50vh,
+                        0
+                    )
+                    rotate(180deg);
+            }
+
+            100% {
+                transform:
+                    translate3d(
+                        calc(
+                            var(--sway) * -1
+                        ),
+                        115vh,
+                        0
+                    )
+                    rotate(450deg);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =====================================================
+           BIRTHDAY POPUP
+        ====================================================== */
+
+        #birthdayPopup {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 4000;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                rgba(
+                    5,
+                    2,
+                    7,
+                    .55
+                );
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+
+            transition:
+                opacity .5s ease,
+                visibility .5s ease;
+        }
+
+        #birthdayPopup.show {
+            opacity: 1;
+
+            visibility: visible;
+
+            pointer-events: auto;
+        }
+
+        .popup-content {
+            position: relative;
+
+            width:
+                min(
+                    100%,
+                    700px
+                );
+
+            padding:
+                35px
+                20px;
+
+            text-align: center;
+
+            transform:
+                scale(.5)
+                rotate(-3deg);
+
+            opacity: 0;
+        }
+
+        #birthdayPopup.show
+        .popup-content {
+            animation:
+                popupBoom
+                1s
+                cubic-bezier(
+                    .17,
+                    .89,
+                    .32,
+                    1.4
+                )
+                forwards;
+        }
+
+        .popup-small {
+            margin-bottom: 5px;
+
+            color: #e7bd82;
+
+            font-size: 12px;
+
+            letter-spacing: .25em;
+
+            text-transform: uppercase;
+        }
+
+        .popup-content h1 {
+            color: #fff;
+
+            font-family:
+                "Great Vibes",
+                cursive;
+
+            font-size:
+                clamp(
+                    68px,
+                    19vw,
+                    155px
+                );
+
+            font-weight: 400;
+
+            line-height: .8;
+
+            text-shadow:
+                0 0 35px
+                rgba(
+                    255,
+                    100,
+                    150,
+                    .45
+                );
+        }
+
+        .popup-content h2 {
+            margin-top: 18px;
+
+            color: #ffb2c7;
+
+            font-family:
+                "Cormorant Garamond",
+                serif;
+
+            font-size:
+                clamp(
+                    34px,
+                    9vw,
+                    70px
+                );
+
+            font-weight: 500;
+        }
+
+        .popup-heart {
+            margin-top: 20px;
+
+            color: #ff8faa;
+
+            font-size: 28px;
+
+            animation:
+                heartbeat
+                1s
+                infinite;
+        }
+
+        @keyframes popupBoom {
+
+            0% {
+                opacity: 0;
+
+                transform:
+                    scale(.3)
+                    rotate(-5deg);
+            }
+
+            45% {
+                opacity: 1;
+
+                transform:
+                    scale(1.15)
+                    rotate(2deg);
+            }
+
+            70% {
+                transform:
+                    scale(.95)
+                    rotate(-1deg);
+            }
+
+            100% {
+                opacity: 1;
+
+                transform:
+                    scale(1)
+                    rotate(0);
+            }
+
+        }
+
+        @keyframes heartbeat {
+
+            0%,
+            100% {
+                transform:
+                    scale(1);
+            }
+
+            50% {
+                transform:
+                    scale(1.25);
+            }
+
+        }
+
+
+        /* =====================================================
+           DESKTOP
+        ====================================================== */
+
+        @media (min-width: 650px) {
+
+            .section {
+                padding:
+                    100px
+                    35px;
+            }
+
+            .message-card {
+                padding:
+                    45px
+                    50px;
+            }
+
+            .wish-grid {
+                grid-template-columns:
+                    repeat(4, 1fr);
+            }
+
+            .wish {
+                min-height: 180px;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL MOBILE
+        ====================================================== */
+
+        @media (max-width: 430px) {
+
+            .hero {
+                padding:
+                    75px
+                    14px
+                    45px;
+            }
+
+            .hero h1 {
+                font-size: 76px;
+            }
+
+            .banner-wrapper {
+                padding: 5px;
+
+                border-radius: 20px;
+            }
+
+            .birthday-banner {
+                border-radius: 16px;
+            }
+
+            .section {
+                padding:
+                    75px
+                    16px;
+            }
+
+            .message-card {
+                padding:
+                    25px
+                    18px;
+            }
+
+            .message-card p {
+                font-size: 19px;
+            }
+
+            .wish-grid {
+                gap: 8px;
+            }
+
+            .wish {
+                min-height: 140px;
+
+                padding:
+                    12px
+                    8px;
+            }
+
+            .wish h3 {
+                font-size: 20px;
+            }
+
+            .wish p {
+                font-size: 10px;
+            }
+
+            .music-control {
+                top: 10px;
+
+                right: 10px;
+
+                padding:
+                    8px
+                    10px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         BACKGROUND MUSIC
+
+         Put your MP3 at:
+         assets/birthday-song.mp3
+    ====================================================== -->
+
+    <audio
+        id="bgMusic"
+        loop
+        preload="auto"
+        src="assets/birthday-song.mp3">
+    </audio>
+
+
+    <!-- =====================================================
+         MUSIC CONTROL
+    ====================================================== -->
+
+    <button
+        id="musicBtn"
+        class="music-control"
+        aria-label="Toggle music"
+    >
+        ♫ <span>Music</span>
+    </button>
+
+
+    <!-- =====================================================
+         OPENING SCREEN
+    ====================================================== -->
+
+    <div id="opening">
+
+        <div class="opening-content">
+
+            <div class="tiny">
+                A little birthday surprise
+            </div>
+
+            <h1>
+                For <span>Her</span> ❤️
+            </h1>
+
+            <p class="opening-text">
+
+                There is someone who deserves
+                a little more than just a
+                birthday wish...
+
+                <br>
+
+                So I made something for her.
+
+            </p>
+
+            <button
+                class="open-btn"
+                id="openBirthday"
+            >
+                Open Your Surprise 🎁
+            </button>
+
+            <div class="opening-heart">
+                ♥ ♥ ♥
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN BIRTHDAY PAGE
+    ====================================================== -->
+
+    <main id="birthdayPage">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-small">
+                    07 • January • A Special Day
+                </div>
+
+                <h1>
+                    Happy Birthday
+                </h1>
+
+                <h2>
+                    To My Beautiful Queen 👑
+                </h2>
+
+                <p class="hero-description">
+
+                    Today isn't just another
+                    date on the calendar.
+
+                    It's the day someone
+                    incredibly special came
+                    into this world.
+
+                </p>
+
+
+                <!-- =========================================
+                     YOUR BIRTHDAY BANNER
+                ========================================== -->
+
+                <div class="banner-wrapper">
+
+                    <img
+                        src="assets/birthday-banner.png"
+                        alt="Happy Birthday Queen"
+                        class="birthday-banner"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MESSAGE
+        ================================================== -->
+
+        <section
+            class="section message-section"
+        >
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    A little something for you
+                </div>
+
+                <h2 class="section-title">
+                    Today is yours.
+                </h2>
+
+                <div class="message-card">
+
+                    <p>
+                        Motiiiiiiiiiii ❤️
+                    </p>
+
+                    <p>
+
+                        Today I just want you
+                        to know how incredibly
+                        special you are.
+
+                    </p>
+
+                    <p>
+
+                        You deserve all the
+                        happiness, all the smiles,
+                        all the beautiful moments
+                        and all the little things
+                        that make your heart happy.
+
+                    </p>
+
+                    <p>
+
+                        I hope this new year
+                        of your life gives you
+                        countless reasons to smile
+                        that beautiful smile of yours.
+
+                    </p>
+
+                    <div class="signature">
+                        — Sangram ❤️
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WISHES
+        ================================================== -->
+
+        <section
+            class="section wishes-section"
+        >
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    My wishes for you
+                </div>
+
+                <h2 class="section-title">
+                    Four little wishes ✨
+                </h2>
+
+                <p class="section-text">
+
+                    If I could give you
+                    four things for this birthday,
+                    these would be them.
+
+                </p>
+
+
+                <div class="wish-grid">
+
+
+                    <div class="wish">
+
+                        <div class="wish-icon">
+                            🌸
+                        </div>
+
+                        <h3>
+                            Happiness
+                        </h3>
+
+                        <p>
+                            The kind that stays
+                            even on ordinary days.
+                        </p>
+
+                    </div>
+
+
+                    <div class="wish">
+
+                        <div class="wish-icon">
+                            ✨
+                        </div>
+
+                        <h3>
+                            Dreams
+                        </h3>
+
+                        <p>
+                            May every dream you
+                            carry come closer.
+                        </p>
+
+                    </div>
+
+
+                    <div class="wish">
+
+                        <div class="wish-icon">
+                            🫶
+                        </div>
+
+                        <h3>
+                            Love
+                        </h3>
+
+                        <p>
+                            More love than your
+                            heart can ever count.
+                        </p>
+
+                    </div>
+
+
+                    <div class="wish">
+
+                        <div class="wish-icon">
+                            🌙
+                        </div>
+
+                        <h3>
+                            Peace
+                        </h3>
+
+                        <p>
+                            A peaceful heart
+                            and beautiful days ahead.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECRET MESSAGE
+        ================================================== -->
+
+        <section
+            class="section surprise-section"
+        >
+
+            <div class="section-inner">
+
+                <div class="section-label">
+                    Psst...
+                </div>
+
+                <h2 class="section-title">
+                    One more thing 👀
+                </h2>
+
+                <p class="section-text">
+
+                    Because a normal birthday
+                    page would be too boring for you.
+
+                </p>
+
+
+                <button
+                    class="surprise-button"
+                    id="surpriseButton"
+                >
+                    Tap for a secret 💌
+                </button>
+
+
+                <div
+                    class="hidden-message"
+                    id="hiddenMessage"
+                >
+
+                    <p>
+
+                        If this year gets difficult,
+                        remember one thing...
+
+                        <br><br>
+
+                        You are stronger than you think,
+                        more precious than you know,
+                        and far more loved than you realise.
+
+                        ❤️
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             FINAL
+        ================================================== -->
+
+        <section class="section final">
+
+            <div class="section-inner">
+
+                <div class="final-small">
+                    And finally...
+                </div>
+
+                <h2>
+                    Happy Birthday
+                </h2>
+
+                <div class="final-name">
+                    Motiiiiiiiiiii ❤️
+                </div>
+
+                <p class="final-text">
+
+                    May this year bring you
+                    beautiful surprises,
+                    peaceful mornings,
+                    crazy laughter,
+                    unforgettable memories
+                    and everything your heart
+                    secretly wishes for.
+
+                    <br><br>
+
+                    Keep smiling.
+                    <br>
+
+                    Keep shining.
+                    <br>
+
+                    Keep being you. ✨
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FIREWORK CANVAS
+    ====================================================== -->
+
+    <canvas id="fireworks"></canvas>
+
+
+    <!-- =====================================================
+         PETAL RAIN
+    ====================================================== -->
+
+    <div id="petalRain"></div>
+
+
+    <!-- =====================================================
+         BIG BIRTHDAY POPUP
+    ====================================================== -->
+
+    <div id="birthdayPopup">
+
+        <div class="popup-content">
+
+            <div class="popup-small">
+                Today is your day
+            </div>
+
+            <h1>
+                Happy Birthday
+            </h1>
+
+            <h2>
+                Queen Sagarika 👑
+            </h2>
+
+            <div class="popup-heart">
+                ❤️ ✨ ❤️
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =====================================================
+           ELEMENTS
+        ====================================================== */
+
+        const opening =
+            document.getElementById(
+                "opening"
+            );
+
+        const openBirthday =
+            document.getElementById(
+                "openBirthday"
+            );
+
+        const birthdayPage =
+            document.getElementById(
+                "birthdayPage"
+            );
+
+        const popup =
+            document.getElementById(
+                "birthdayPopup"
+            );
+
+        const petalRain =
+            document.getElementById(
+                "petalRain"
+            );
+
+        const surpriseButton =
+            document.getElementById(
+                "surpriseButton"
+            );
+
+        const hiddenMessage =
+            document.getElementById(
+                "hiddenMessage"
+            );
+
+        const canvas =
+            document.getElementById(
+                "fireworks"
+            );
+
+        const ctx =
+            canvas.getContext("2d");
+
+        const music =
+            document.getElementById(
+                "bgMusic"
+            );
+
+        const musicBtn =
+            document.getElementById(
+                "musicBtn"
+            );
+
+
+        /* =====================================================
+           CANVAS
+        ====================================================== */
+
+        function resizeCanvas() {
+
+            canvas.width =
+                window.innerWidth;
+
+            canvas.height =
+                window.innerHeight;
+
+        }
+
+        resizeCanvas();
+
+        window.addEventListener(
+            "resize",
+            resizeCanvas
+        );
+
+
+        /* =====================================================
+           MUSIC BUTTON
+        ====================================================== */
+
+        function updateMusicButton() {
+
+            if (
+                !music.paused
+            ) {
+
+                musicBtn.classList.add(
+                    "playing"
+                );
+
+                musicBtn.innerHTML =
+                    "♫ <span>Playing</span>";
+
+            } else {
+
+                musicBtn.classList.remove(
+                    "playing"
+                );
+
+                musicBtn.innerHTML =
+                    "♫ <span>Music</span>";
+
+            }
+
+        }
+
+
+        musicBtn.addEventListener(
+            "click",
+            async () => {
+
+                if (
+                    music.paused
+                ) {
+
+                    try {
+
+                        await music.play();
+
+                        updateMusicButton();
+
+                    }
+
+                    catch (error) {
+
+                        console.log(
+                            "Music error:",
+                            error
+                        );
+
+                    }
+
+                }
+
+                else {
+
+                    music.pause();
+
+                    updateMusicButton();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           BIRTHDAY OPEN
+        ====================================================== */
+
+        let celebrationStarted =
+            false;
+
+
+        openBirthday.addEventListener(
+            "click",
+            async () => {
+
+                if (
+                    celebrationStarted
+                ) {
+                    return;
+                }
+
+                celebrationStarted =
+                    true;
+
+
+                /* =============================================
+                   START MUSIC
+                ============================================== */
+
+                try {
+
+                    music.volume =
+                        0.75;
+
+                    await music.play();
+
+                    musicBtn.classList.add(
+                        "visible"
+                    );
+
+                    updateMusicButton();
+
+                }
+
+                catch (error) {
+
+                    console.log(
+                        "Music could not start:",
+                        error
+                    );
+
+                    musicBtn.classList.add(
+                        "visible"
+                    );
+
+                }
+
+
+                /* =============================================
+                   OPEN MAIN PAGE
+                ============================================== */
+
+                opening.classList.add(
+                    "hide"
+                );
+
+                birthdayPage.classList.add(
+                    "show"
+                );
+
+
+                /* =============================================
+                   FIRST BOOM
+                ============================================== */
+
+                createBoom();
+
+
+                /* =============================================
+                   BIG REVEAL
+                ============================================== */
+
+                setTimeout(
+                    () => {
+
+                        popup.classList.add(
+                            "show"
+                        );
+
+
+                        /* FLOWERS */
+
+                        createPetals(
+                            150
+                        );
+
+
+                        /* FIREWORKS */
+
+                        startFireworks();
+
+
+                        /* BOOMS */
+
+                        createBoom();
+
+                        setTimeout(
+                            createBoom,
+                            350
+                        );
+
+                        setTimeout(
+                            createBoom,
+                            750
+                        );
+
+                        setTimeout(
+                            createBoom,
+                            1200
+                        );
+
+                    },
+                    700
+                );
+
+
+                /* =============================================
+                   HIDE BIG POPUP
+                ============================================== */
+
+                setTimeout(
+                    () => {
+
+                        popup.classList.remove(
+                            "show"
+                        );
+
+                    },
+                    5500
+                );
+
+
+                /* =============================================
+                   EXTRA PETAL BURST
+                ============================================== */
+
+                setTimeout(
+                    () => {
+
+                        createPetals(
+                            70
+                        );
+
+                    },
+                    3500
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           SURPRISE MESSAGE
+        ====================================================== */
+
+        surpriseButton.addEventListener(
+            "click",
+            () => {
+
+                hiddenMessage.classList.toggle(
+                    "open"
+                );
+
+
+                if (
+                    hiddenMessage
+                        .classList
+                        .contains("open")
+                ) {
+
+                    surpriseButton.textContent =
+                        "You found it ❤️";
+
+                    createPetals(
+                        45
+                    );
+
+                    createBoom();
+
+                }
+
+                else {
+
+                    surpriseButton.textContent =
+                        "Tap for a secret 💌";
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           PETALS
+        ====================================================== */
+
+        function createPetals(
+            amount
+        ) {
+
+            for (
+                let i = 0;
+                i < amount;
+                i++
+            ) {
+
+                const petal =
+                    document.createElement(
+                        "span"
+                    );
+
+                petal.className =
+                    "petal";
+
+
+                petal.style.left =
+                    (
+                        Math.random() * 100
+                    ) +
+                    "vw";
+
+
+                petal.style.setProperty(
+                    "--sway",
+
+                    (
+                        Math.random() *
+                        220 -
+                        110
+                    ) +
+                    "px"
+                );
+
+
+                petal.style.animationDuration =
+                    (
+                        4 +
+                        Math.random() * 5
+                    ) +
+                    "s";
+
+
+                petal.style.animationDelay =
+                    (
+                        Math.random() * 2
+                    ) +
+                    "s";
+
+
+                petal.style.width =
+                    (
+                        10 +
+                        Math.random() * 9
+                    ) +
+                    "px";
+
+
+                petal.style.height =
+                    (
+                        15 +
+                        Math.random() * 12
+                    ) +
+                    "px";
+
+
+                petalRain.appendChild(
+                    petal
+                );
+
+
+                setTimeout(
+                    () => {
+
+                        petal.remove();
+
+                    },
+                    11000
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           FIREWORK PARTICLES
+        ====================================================== */
+
+        let particles = [];
+
+
+        function createFirework(
+            x,
+            y
+        ) {
+
+            const count =
+                70;
+
+
+            for (
+                let i = 0;
+                i < count;
+                i++
+            ) {
+
+                const angle =
+                    Math.PI *
+                    2 *
+                    i /
+                    count;
+
+
+                const speed =
+                    2 +
+                    Math.random() *
+                    5;
+
+
+                particles.push({
+
+                    x: x,
+
+                    y: y,
+
+                    vx:
+                        Math.cos(
+                            angle
+                        ) *
+                        speed,
+
+                    vy:
+                        Math.sin(
+                            angle
+                        ) *
+                        speed,
+
+                    life:
+                        70 +
+                        Math.random() *
+                        35,
+
+                    maxLife:
+                        105,
+
+                    size:
+                        1.5 +
+                        Math.random() *
+                        2.5,
+
+                    hue:
+                        Math.random() *
+                        360
+
+                });
+
+            }
+
+        }
+
+
+        /* =====================================================
+           FIREWORK ANIMATION
+        ====================================================== */
+
+        function animateFireworks() {
+
+            ctx.clearRect(
+                0,
+                0,
+                canvas.width,
+                canvas.height
+            );
+
+
+            particles =
+                particles.filter(
+                    p =>
+                        p.life > 0
+                );
+
+
+            particles.forEach(
+                p => {
+
+                    p.x +=
+                        p.vx;
+
+                    p.y +=
+                        p.vy;
+
+                    p.vy +=
+                        .045;
+
+                    p.vx *=
+                        .985;
+
+                    p.life--;
+
+
+                    const alpha =
+                        p.life /
+                        p.maxLife;
+
+
+                    ctx.beginPath();
+
+
+                    ctx.arc(
+                        p.x,
+                        p.y,
+                        p.size,
+                        0,
+                        Math.PI * 2
+                    );
+
+
+                    ctx.fillStyle =
+                        `hsla(
+                            ${p.hue},
+                            100%,
+                            75%,
+                            ${alpha}
+                        )`;
+
+
+                    ctx.shadowBlur =
+                        15;
+
+
+                    ctx.shadowColor =
+                        ctx.fillStyle;
+
+
+                    ctx.fill();
+
+                }
+            );
+
+
+            ctx.shadowBlur =
+                0;
+
+
+            requestAnimationFrame(
+                animateFireworks
+            );
+
+        }
+
+
+        animateFireworks();
+
+
+        /* =====================================================
+           FIREWORK SHOW
+        ====================================================== */
+
+        function startFireworks() {
+
+            const positions = [
+
+                [0.18, 0.28],
+
+                [0.50, 0.20],
+
+                [0.82, 0.28],
+
+                [0.30, 0.45],
+
+                [0.70, 0.42],
+
+                [0.50, 0.32]
+
+            ];
+
+
+            positions.forEach(
+                (
+                    position,
+                    index
+                ) => {
+
+                    setTimeout(
+                        () => {
+
+                            createFirework(
+
+                                canvas.width *
+                                position[0],
+
+                                canvas.height *
+                                position[1]
+
+                            );
+
+                        },
+
+                        index * 380
+                    );
+
+                }
+            );
+
+
+            /* RANDOM FIREWORKS */
+
+            for (
+                let i = 0;
+                i < 14;
+                i++
+            ) {
+
+                setTimeout(
+                    () => {
+
+                        createFirework(
+
+                            canvas.width *
+                            (
+                                .12 +
+                                Math.random() *
+                                .76
+                            ),
+
+                            canvas.height *
+                            (
+                                .12 +
+                                Math.random() *
+                                .42
+                            )
+
+                        );
+
+                    },
+
+                    2500 +
+                    i * 420
+                );
+
+            }
+
+        }
+
+
+        /* =====================================================
+           WEB AUDIO BOOM
+        ====================================================== */
+
+        let audioContext =
+            null;
+
+
+        function getAudioContext() {
+
+            if (
+                !audioContext
+            ) {
+
+                audioContext =
+                    new (
+                        window.AudioContext ||
+                        window.webkitAudioContext
+                    )();
+
+            }
+
+            return audioContext;
+
+        }
+
+
+        function createBoom() {
+
+            try {
+
+                const audio =
+                    getAudioContext();
+
+
+                /* =============================================
+                   DEEP BOOM
+                ============================================== */
+
+                const oscillator =
+                    audio.createOscillator();
+
+                const gain =
+                    audio.createGain();
+
+                const filter =
+                    audio.createBiquadFilter();
+
+
+                oscillator.type =
+                    "sine";
+
+
+                oscillator.frequency.setValueAtTime(
+                    90,
+                    audio.currentTime
+                );
+
+
+                oscillator.frequency.exponentialRampToValueAtTime(
+                    28,
+                    audio.currentTime + .5
+                );
+
+
+                filter.type =
+                    "lowpass";
+
+
+                filter.frequency.value =
+                    180;
+
+
+                gain.gain.setValueAtTime(
+                    0.0001,
+                    audio.currentTime
+                );
+
+
+                gain.gain.exponentialRampToValueAtTime(
+                    .8,
+                    audio.currentTime + .025
+                );
+
+
+                gain.gain.exponentialRampToValueAtTime(
+                    .0001,
+                    audio.currentTime + .65
+                );
+
+
+                oscillator.connect(
+                    filter
+                );
+
+
+                filter.connect(
+                    gain
+                );
+
+
+                gain.connect(
+                    audio.destination
+                );
+
+
+                oscillator.start();
+
+
+                oscillator.stop(
+                    audio.currentTime + .7
+                );
+
+
+                /* =============================================
+                   CRACK / POP
+                ============================================== */
+
+                const crack =
+                    audio.createOscillator();
+
+                const crackGain =
+                    audio.createGain();
+
+
+                crack.type =
+                    "triangle";
+
+
+                crack.frequency.setValueAtTime(
+                    420,
+                    audio.currentTime
+                );
+
+
+                crack.frequency.exponentialRampToValueAtTime(
+                    90,
+                    audio.currentTime + .15
+                );
+
+
+                crackGain.gain.setValueAtTime(
+                    .001,
+                    audio.currentTime
+                );
+
+
+                crackGain.gain.exponentialRampToValueAtTime(
+                    .18,
+                    audio.currentTime + .01
+                );
+
+
+                crackGain.gain.exponentialRampToValueAtTime(
+                    .001,
+                    audio.currentTime + .18
+                );
+
+
+                crack.connect(
+                    crackGain
+                );
+
+
+                crackGain.connect(
+                    audio.destination
+                );
+
+
+                crack.start();
+
+
+                crack.stop(
+                    audio.currentTime + .2
+                );
+
+            }
+
+            catch (error) {
+
+                console.log(
+                    "Boom sound unavailable:",
+                    error
+                );
+
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
